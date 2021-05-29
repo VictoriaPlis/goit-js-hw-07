@@ -31,6 +31,7 @@ const images = [
 
 
 const galleryEl = document.querySelector('ul');
+
 images.forEach(image => {
   galleryEl.insertAdjacentHTML(
     'beforeend',
