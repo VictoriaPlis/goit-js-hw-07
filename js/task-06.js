@@ -16,7 +16,7 @@ nmbrOfCharacters.addEventListener('blur', validInput);
 
 function validInput(event) {
   if (
-  event.currentTarget.getAttribute('data-length') <=
+  event.currentTarget.getAttribute('data-length') ===
   event.currentTarget.value.length
  ) {
   nmbrOfCharacters.classList.remove('invalid');
