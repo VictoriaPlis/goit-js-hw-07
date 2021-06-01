@@ -28,13 +28,16 @@ const images = [
 
 
 
+const galleryEl = document.querySelector("#gallery");
 
+galleryEl.classList.add("gallery__list");
 
-const galleryEl = document.querySelector('ul');
+const makeGalleryMarkup = ({ url, alt }) => {
+  return `<li class = "gallery__item">
+      <image src="${url}" alt="${alt}"></image>
+    </li>`;
+};
 
-images.forEach(image => {
-  galleryEl.insertAdjacentHTML(
-    'beforeend',
-    `<li><img src="${image.url}" alt="${image.alt}"></li>`,
-  );
-});
+const makeGalleryItems = images.map(makeGalleryMarkup).join("");
+
+galleryEl.insertAdjacentHTML("afterbegin", makeGalleryItems);
